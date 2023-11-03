@@ -3,4 +3,16 @@
     <string name="saludo">Hola, Nombre! </string>
     <string name="mensaje">Encuentra tu antojo favorito</string>
     <string name="iniciosesion">Crea una cuenta</string>
+    <string name="search">Buscar</string>
+    <string name="add">Añadir</string>
+    <string name="info">Información</string>
+    <string name="settings">Configuración</string>
+    <string name="help">Ayuda</string>
+    <string name="antojos">Antojos</string>
+    <string name="bebidas">Bebidas</string>
+    <string name="sushi">Sushi</string>
+    <string name="postres">Postres</string>
+    <string name="pizza">Pizza</string>
+    <string name="hint">Escriba su consulta aquí</string>
+    <string name="recomendados"> Recomendados para ti </string>
 </resources>

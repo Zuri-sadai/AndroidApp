@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Items visibles siempre en la barra de acción -->
+
+    <!-- Ícono de búsqueda -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/search"
+        app:showAsAction="ifRoom"/>
+
+    <!-- Ícono de añadir o más -->
+    <item
+        android:id="@+id/action_add"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/add"
+        app:showAsAction="ifRoom"/>
+
+    <!-- Ícono de información -->
+    <item
+        android:id="@+id/action_info"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/info"
+        app:showAsAction="ifRoom"/>
+
+    <!-- Ícono de configuración o ajustes -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="@string/settings"
+        app:showAsAction="never"/>
+
+    <!-- Ícono de ayuda -->
+    <item
+        android:id="@+id/action_help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/help"
+        app:showAsAction="never"/>
+
+</menu>
