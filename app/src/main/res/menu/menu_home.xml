@@ -4,16 +4,16 @@
     <!-- Items visibles siempre en la barra de acción -->
 
     <!-- Ícono de búsqueda -->
-    <item
+        <item
         android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/baseline_shopping_cart_24"
         android:title="@string/search"
         app:showAsAction="ifRoom"/>
 
     <!-- Ícono de añadir o más -->
     <item
         android:id="@+id/action_add"
-        android:icon="@android:drawable/ic_menu_add"
+        android:icon="@drawable/baseline_person_outline_24"
         android:title="@string/add"
         app:showAsAction="ifRoom"/>
 
