@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     // Agregar un Log para cada selección del menú
                     Log.d("MainActivity", "Item seleccionado: " + menuItem.getTitle());
 
-                    // Ejemplo: Si tienes un ítem de menú con id 'nav_home'
                     if (id == R.id.nav_fav) {
                         Log.d("MainActivity", "nav_fav");
                         return true;
