@@ -4,24 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="160dp"
     android:orientation="vertical"
-    android:gravity="bottom"
+    android:gravity="center"
     android:padding="16dp"
     android:background="@android:drawable/screen_background_light_transparent">
 
+    <!-- ImageView ajustado para asegurar que no sea demasiado grande y cubra el texto -->
     <ImageView
         android:id="@+id/imageViewHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:contentDescription="@android:string/untitled"
-        android:src="@android:drawable/sym_def_app_icon"
+        android:src="@drawable/user"
         android:layout_gravity="center" />
 
+    <!-- TextView para el texto Usuario -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@android:string/untitled"
+        android:text="Usuario"
         android:paddingTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/black"
         android:layout_gravity="center"/>
 
 </LinearLayout>

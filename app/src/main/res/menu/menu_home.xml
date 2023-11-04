@@ -5,16 +5,16 @@
 
     <!-- Ícono de búsqueda -->
         <item
-        android:id="@+id/action_search"
+        android:id="@+id/action_cart"
         android:icon="@drawable/baseline_shopping_cart_24"
-        android:title="@string/search"
+        android:title="@string/cart"
         app:showAsAction="ifRoom"/>
 
     <!-- Ícono de añadir o más -->
     <item
-        android:id="@+id/action_add"
+        android:id="@+id/action_profile"
         android:icon="@drawable/baseline_person_outline_24"
-        android:title="@string/add"
+        android:title="@string/profile"
         app:showAsAction="ifRoom"/>
 
     <!-- Ícono de información -->

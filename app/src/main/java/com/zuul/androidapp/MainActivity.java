@@ -108,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
         // Maneja los clics de los ítems del menú aquí.
         int id = item.getItemId();
 
-        if (id == R.id.action_search) {
-            Log.d("MainActivity", "action_search");
+        if (id == R.id.action_cart) {
+            Log.d("MainActivity", "action_cart");
             return true;
-        } else if (id == R.id.action_add) {
-            Log.d("MainActivity", "action_add");
+        } else if (id == R.id.action_profile) {
+            Log.d("MainActivity", "action_profile");
             return true;
         } else if (id == R.id.action_info) {
             Log.d("MainActivity", "action_info");

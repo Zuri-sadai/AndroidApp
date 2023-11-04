@@ -3,8 +3,8 @@
     <string name="saludo">Hola, Nombre! </string>
     <string name="mensaje">Encuentra tu antojo favorito</string>
     <string name="iniciosesion">Crea una cuenta</string>
-    <string name="search">Buscar</string>
-    <string name="add">Añadir</string>
+    <string name="cart">Carrito</string>
+    <string name="profile">Perfil</string>
     <string name="info">Información</string>
     <string name="settings">Configuración</string>
     <string name="help">Ayuda</string>
