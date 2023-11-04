@@ -16,6 +16,12 @@
     <string name="hint">Escriba su consulta aquí</string>
     <string name="recomendados"> Recomendados para ti </string>
 
+    <string name="fav">Favoritos</string>
+    <string name="prom">Promociones</string>
+    <string name="pedidos">Mis Pedidos</string>
+    <string name="cerrar">Cerrar Sesión</string>
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

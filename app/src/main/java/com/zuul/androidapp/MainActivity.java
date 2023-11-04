@@ -67,10 +67,19 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("MainActivity", "Item seleccionado: " + menuItem.getTitle());
 
                     // Ejemplo: Si tienes un ítem de menú con id 'nav_home'
-                    if (id == R.id.nav_home) {
-                        // Manejar clic en nav_home
+                    if (id == R.id.nav_fav) {
+                        Log.d("MainActivity", "nav_fav");
+                        return true;
+                    } else if (id == R.id.nav_pedido) {
+                        Log.d("MainActivity", "nav_pedido");
+                        return true;
+                    } else if (id == R.id.nav_promo) {
+                        Log.d("MainActivity", "nav_promo");
+                        return true;
+                    } else if (id == R.id.nav_cerrar) {
+                        Log.d("MainActivity", "nav_cerrar");
+                        return true;
                     }
-                    // Agregar más if-else para otros ítems del menú
 
                     drawerLayout.closeDrawer(GravityCompat.START);
                     return true;
@@ -118,4 +127,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

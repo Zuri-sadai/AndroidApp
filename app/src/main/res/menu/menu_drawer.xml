@@ -2,9 +2,21 @@
     <!-- ... otros ítems de menú ... -->
 
     <item
-        android:id="@+id/nav_home"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="@string/search" />
+        android:id="@+id/nav_fav"
+        android:icon="@drawable/favorito"
+        android:title="@string/fav" />
 
-    <!-- ... más ítems de menú ... -->
+    <item
+        android:id="@+id/nav_pedido"
+        android:icon="@drawable/pedido"
+        android:title="@string/pedidos" />
+
+    <item
+        android:id="@+id/nav_promo"
+        android:icon="@drawable/promo"
+        android:title="@string/prom" />
+
+    <item
+        android:id="@+id/nav_cerrar"
+        android:title="@string/cerrar" />
 </menu>
