@@ -3,20 +3,88 @@ package com.zuul.androidapp;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import com.google.android.material.navigation.NavigationView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import androidx.drawerlayout.widget.DrawerLayout.SimpleDrawerListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+
+        toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        );
+
+        // Se añade el listener del ActionBarDrawerToggle al DrawerLayout
+        drawerLayout.addDrawerListener(toggle);
+
+        // Se añade un SimpleDrawerListener para manejar los eventos de apertura y cierre
+        drawerLayout.addDrawerListener(new SimpleDrawerListener() {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                Log.d("MainActivity", "Drawer opened");
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                Log.d("MainActivity", "Drawer closed");
+            }
+        });
+
+        toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(
+                menuItem -> {
+                    // Maneja la navegación de los ítems del menú aquí.
+                    int id = menuItem.getItemId();
+
+                    // Agregar un Log para cada selección del menú
+                    Log.d("MainActivity", "Item seleccionado: " + menuItem.getTitle());
+
+                    // Ejemplo: Si tienes un ítem de menú con id 'nav_home'
+                    if (id == R.id.nav_home) {
+                        // Manejar clic en nav_home
+                    }
+                    // Agregar más if-else para otros ítems del menú
+
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    return true;
+                }
+        );
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -32,19 +100,19 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_search) {
-            Log.d("HomeActivity", "action_search");
+            Log.d("MainActivity", "action_search");
             return true;
         } else if (id == R.id.action_add) {
-            Log.d("HomeActivity", "action_add");
+            Log.d("MainActivity", "action_add");
             return true;
         } else if (id == R.id.action_info) {
-            Log.d("HomeActivity", "action_info");
+            Log.d("MainActivity", "action_info");
             return true;
         } else if (id == R.id.action_settings) {
-            Log.d("HomeActivity", "action_settings");
+            Log.d("MainActivity", "action_settings");
             return true;
         } else if (id == R.id.action_help) {
-            Log.d("HomeActivity", "action_help");
+            Log.d("MainActivity", "action_help");
             return true;
         }
 

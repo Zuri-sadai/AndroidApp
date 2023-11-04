@@ -15,4 +15,7 @@
     <string name="pizza">Pizza</string>
     <string name="hint">Escriba su consulta aquí</string>
     <string name="recomendados"> Recomendados para ti </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
