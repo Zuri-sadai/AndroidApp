@@ -4,8 +4,9 @@ import com.zuul.androidapp.database.DatabaseHelper;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.Menu;
 
@@ -21,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.EditText;
 import android.text.InputType;
+import android.widget.ImageView;
+
 import com.zuul.androidapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText telefonoEditText, emailEditText, passwrdEditText, repasswrdEditText;
     private boolean userLoggedIn = false;
-
-    private boolean passwordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,5 +177,29 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void togglePasswordVisibility(View view) {
+        ImageView imageView = (ImageView) view;
+        String editTextTag = imageView.getTag().toString();
+
+        EditText editText;
+        if (editTextTag.equals("passwrd")) {
+            editText = findViewById(R.id.passwrd);
+        } else if (editTextTag.equals("passwrdLogin")){
+            editText = findViewById(R.id.passwrd);
+        } else {
+            editText = findViewById(R.id.repasswrd);
+        }
+
+        if (editText.getTransformationMethod() == PasswordTransformationMethod.getInstance()) {
+            // Mostrar la contraseña
+            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        } else {
+            // Ocultar la contraseña
+            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        }
+
+        editText.setSelection(editText.length()); // Mantener el cursor al final del texto
     }
 }

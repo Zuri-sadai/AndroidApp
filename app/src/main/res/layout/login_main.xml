@@ -40,20 +40,38 @@
             android:padding="10dp"
             android:textColorHint="@color/gris" />
 
-        <EditText
-            android:id="@+id/passwrd"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="38dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:drawablePadding="20dp"
-            android:hint="Confirmación de contraseña"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:textColorHint="@color/gris"
-            android:drawableRight="@drawable/baseline_remove_red_eye_24" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/passwrd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHint="@color/gris"
+                android:hint="Confirmación de contraseña" />
+
+            <ImageView
+                android:id="@+id/showPasswordIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_remove_red_eye_24"
+                android:padding="12dp"
+                android:clickable="true"
+                android:contentDescription="Toggle Password Visibility"
+                android:onClick="togglePasswordVisibility"
+                android:tag="passwrdLogin" />
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
