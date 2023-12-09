@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             boolean isInserted = databaseHelper.insertUserData(username, address, phone, email, password);
             if (isInserted) {
                 userLoggedIn = true;
+                saveUsernameLocally(username);
                 showFragments();
             } else {
                 showSnackbarError("El usuario ya existe");
