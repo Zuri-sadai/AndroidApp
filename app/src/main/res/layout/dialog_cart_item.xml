@@ -1,0 +1,33 @@
+<!-- dialog_cart_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewCartItem"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:contentDescription="Imagen del platillo"
+        android:src="@drawable/burger" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/textViewCartItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Garnachera" />
+
+        <TextView
+            android:id="@+id/textViewCartItemQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad: 1" />
+    </LinearLayout>
+</LinearLayout>

@@ -2,12 +2,17 @@ package com.zuul.androidapp;
 
 import com.zuul.androidapp.database.DatabaseHelper;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -22,6 +27,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.text.InputType;
 import android.widget.ImageView;
@@ -37,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText telefonoEditText, emailEditText, passwrdEditText, repasswrdEditText;
     private boolean userLoggedIn = false;
+
+    private int itemsInCart = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,8 +164,21 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                // Crear el diálogo
+                Dialog dialog = new Dialog(MainActivity.this, R.style.DialogStyle);
+                dialog.setContentView(R.layout.dialog_cart_item);
+
+                // Establecer la posición del diálogo
+                Window window = dialog.getWindow();
+                if (window != null) {
+                    WindowManager.LayoutParams layoutParams = window.getAttributes();
+                    layoutParams.gravity = Gravity.BOTTOM | Gravity.END;
+                    layoutParams.x = 50;
+                    layoutParams.y = 250;
+                    window.setAttributes(layoutParams);
+                }
+
+                dialog.show();
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
