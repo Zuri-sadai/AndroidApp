@@ -8,7 +8,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-167dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,35 +23,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="@string/saludo"
+                android:text="Favoritos"
                 android:textSize="25sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="@string/mensaje"
-                android:textSize="15sp" />
+                android:text="¡Tus Sabores Preferidos!"
+                android:textSize="10sp" />
 
             <EditText
                 android:id="@+id/username"
-                android:maxWidth="488dp"
                 android:layout_width="match_parent"
-                android:minHeight="48dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:autofillHints="username"
                 android:background="@color/white"
                 android:drawableEnd="@drawable/baseline_search_24"
                 android:drawablePadding="14dp"
-                android:padding="14dp"
-                android:textColorHint="@color/gris"
-                android:layout_margin="20dp"
                 android:hint="@string/hint"
                 android:inputType="text"
-                android:autofillHints="username" />
+                android:maxWidth="488dp"
+                android:minHeight="48dp"
+                android:padding="14dp"
+                android:textColorHint="@color/gris"/>
 
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
                 android:columnCount="2"
                 android:columnOrderPreserved="false"
@@ -75,16 +77,25 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/burger"
-                            android:contentDescription="@string/antojos"/>
+                            android:contentDescription="@string/antojos"
+                            android:src="@drawable/pizza" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:text="@string/antojos"
+                            android:text="Pizza"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            android:text="Pizza Hawaina, con ojas de albahaca"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -108,16 +119,25 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/drink"
-                            android:contentDescription="@string/bebidas" />
+                            android:contentDescription="@string/bebidas"
+                            android:src="@drawable/burger" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:text="@string/bebidas"
+                            android:text="BigBurgr"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            android:text="Hamburguesa con piña, carne y tocino"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -141,16 +161,25 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/sushi"
-                            android:contentDescription="@string/sushi" />
+                            android:contentDescription="@string/sushi"
+                            android:src="@drawable/img_1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:text="@string/sushi"
+                            android:text="Calpis"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            android:text="refrescante sabor suave y ligero. "
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -174,86 +203,26 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/dessert"
-                            android:contentDescription="@string/postres" />
+                            android:contentDescription="@string/postres"
+                            android:src="@drawable/hora" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:text="@string/postres"
+                            android:text="Alimento"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="12dp"
+                            android:text="Descripción del alimento"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </GridLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="@string/recomendados"
-                android:textSize="15sp" />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="183dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:alignmentMode="alignMargins"
-                android:columnCount="3"
-                android:columnOrderPreserved="false"
-                android:rowCount="1">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="14dp"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/pizza"
-                        android:src="@drawable/pizza" />
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="14dp"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/postres"
-                        android:src="@drawable/dessert" />
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="14dp"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="4dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:contentDescription="@string/sushi"
-                        android:src="@drawable/sushi" />
                 </androidx.cardview.widget.CardView>
             </GridLayout>
         </LinearLayout>
