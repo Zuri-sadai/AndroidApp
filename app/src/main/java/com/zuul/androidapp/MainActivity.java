@@ -3,8 +3,10 @@ package com.zuul.androidapp;
 import com.zuul.androidapp.database.DatabaseHelper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
@@ -20,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.EditText;
 import android.text.InputType;
+import android.widget.TextView;
+
 import com.google.android.material.snackbar.Snackbar;
 
 import com.zuul.androidapp.databinding.ActivityMainBinding;
@@ -61,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             boolean isValidUser = databaseHelper.checkUserCredentials(username, password);
             if (isValidUser) {
+                String userEmail = databaseHelper.getEmailForUser(username);
+
                 userLoggedIn = true;
-                saveUsernameLocally(username);
+                saveUsernameLocally(username, userEmail);
                 showFragments();
             } else {
                 showSnackbarError("Usuario o contraseña incorrecta");
@@ -70,10 +76,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void saveUsernameLocally(String username) {
+    private void saveUsernameLocally(String username, String email) {
         SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("username", username);
+        editor.putString("email", email);
         editor.apply();
     }
 
@@ -116,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             boolean isInserted = databaseHelper.insertUserData(username, address, phone, email, password);
             if (isInserted) {
                 userLoggedIn = true;
-                saveUsernameLocally(username);
+                saveUsernameLocally(username, email);
                 showFragments();
             } else {
                 showSnackbarError("El usuario ya existe");
@@ -161,6 +168,43 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Agregar un listener al menú para cerrar sesión
+        Menu navMenu = navigationView.getMenu();
+        MenuItem cerrarMenuItem = navMenu.findItem(R.id.nav_cerrar);
+        cerrarMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                // Borrar SharedPreferences
+                SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear(); // Borrar todos los datos almacenados
+                editor.apply();
+
+                // Reiniciar la actividad
+                Intent intent = getIntent();
+                finish(); // Cerrar la actividad actual
+                startActivity(intent); // Iniciar la actividad de nuevo
+
+                return true;
+            }
+        });
+
+        // Obtener SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+
+        // Obtener el nombre de usuario y el correo electrónico guardados
+        String username = sharedPreferences.getString("username", "");
+        String email = sharedPreferences.getString("email", "");
+
+        // Actualizar TextView en nav_header_main.xml
+        View headerView = binding.navView.getHeaderView(0);
+        TextView textViewUsername = headerView.findViewById(R.id.textViewUsername);
+        TextView textViewEmail = headerView.findViewById(R.id.textViewEmail);
+
+        // Actualizar los TextView con los valores de SharedPreferences
+        textViewUsername.setText(username);
+        textViewEmail.setText(email);
     }
 
     @Override

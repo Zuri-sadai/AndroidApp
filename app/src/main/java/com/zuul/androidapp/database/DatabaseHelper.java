@@ -80,4 +80,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return count > 0; // Devuelve verdadero si las credenciales coinciden
     }
+
+    public String getEmailForUser(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_EMAIL};
+        String selection = COLUMN_USERNAME + " = ?";
+        String[] selectionArgs = {username};
+
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+
+        String userEmail = "";
+
+        if (cursor != null && cursor.moveToFirst()) {
+            int emailColumnIndex = cursor.getColumnIndex(COLUMN_EMAIL);
+            if (emailColumnIndex >= 0) {
+                userEmail = cursor.getString(emailColumnIndex);
+            }
+        }
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
+        return userEmail;
+    }
 }
