@@ -161,7 +161,8 @@
             android:layout_marginTop="160dp"
             android:layout_marginBottom="30dp"
             android:text="Confirmar"
-            android:onClick="registerUser"/>
+            android:onClick="registerUser"
+            android:backgroundTint="@color/colorPrimaryDark"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
