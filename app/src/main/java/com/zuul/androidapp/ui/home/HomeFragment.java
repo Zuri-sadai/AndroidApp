@@ -1,7 +1,6 @@
 package com.zuul.androidapp.ui.home;
 
 import com.zuul.androidapp.R;
-import com.zuul.androidapp.database.DatabaseHelper;
 
 import android.content.Context;
 import android.content.SharedPreferences;

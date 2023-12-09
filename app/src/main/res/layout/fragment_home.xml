@@ -197,13 +197,13 @@
 
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="183dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:alignmentMode="alignMargins"
                 android:columnCount="3"
                 android:columnOrderPreserved="false"
-                android:rowCount="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+                android:rowCount="1">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="14dp"
@@ -218,8 +218,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/pizza"
-                        android:contentDescription="@string/pizza" />
+                        android:contentDescription="@string/pizza"
+                        android:src="@drawable/pizza" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -235,8 +235,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/dessert"
-                        android:contentDescription="@string/postres" />
+                        android:contentDescription="@string/postres"
+                        android:src="@drawable/dessert" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -252,8 +252,8 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/sushi"
-                        android:contentDescription="@string/sushi" />
+                        android:contentDescription="@string/sushi"
+                        android:src="@drawable/sushi" />
                 </androidx.cardview.widget.CardView>
             </GridLayout>
         </LinearLayout>
