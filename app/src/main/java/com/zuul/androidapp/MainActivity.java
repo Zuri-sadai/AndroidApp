@@ -4,6 +4,7 @@ import com.zuul.androidapp.database.DatabaseHelper;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -20,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.EditText;
 import android.text.InputType;
-import com.google.android.material.snackbar.Snackbar;
 import com.zuul.androidapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText telefonoEditText, emailEditText, passwrdEditText, repasswrdEditText;
     private boolean userLoggedIn = false;
+
+    private boolean passwordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,20 +176,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public void togglePasswordVisibility(View view) {
-        EditText editText = (EditText) view;
-
-        // Cambiar entre contraseña visible e invisible
-        if (editText.getInputType() == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
-            // Si ya está visible, ocultarla
-            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        } else {
-            // Si está oculta, hacerla visible
-            editText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-        }
-        // Mover el cursor al final del texto para mantener la visibilidad del cursor
-        editText.setSelection(editText.getText().length());
     }
 }

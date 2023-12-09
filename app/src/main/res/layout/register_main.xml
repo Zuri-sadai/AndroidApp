@@ -93,8 +93,7 @@
             android:hint="Confirmación de contraseña"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColorHint="@color/gris"
-            android:onClick="togglePasswordVisibility" />
+            android:textColorHint="@color/gris" />
 
         <EditText
             android:id="@+id/repasswrd"
@@ -109,8 +108,7 @@
             android:hint="Confirmación de contraseña"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColorHint="@color/gris"
-            android:onClick="togglePasswordVisibility" />
+            android:textColorHint="@color/gris" />
 
         <View
             android:layout_width="match_parent"
