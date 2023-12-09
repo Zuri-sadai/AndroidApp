@@ -19,20 +19,20 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="77dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/user" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:drawableLeft="@drawable/baseline_person_outline_24"
+            android:drawableRight="@drawable/baseline_person_outline_24"
             android:drawablePadding="20dp"
             android:hint="Nombre"
             android:padding="10dp"
@@ -41,12 +41,12 @@
         <EditText
             android:id="@+id/direccion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:drawableLeft="@drawable/baseline_location_on_24"
+            android:drawableRight="@drawable/baseline_location_on_24"
             android:drawablePadding="20dp"
             android:hint="Direccion"
             android:padding="10dp"
@@ -55,12 +55,12 @@
         <EditText
             android:id="@+id/telefono"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:drawableLeft="@drawable/baseline_phone_24"
+            android:drawableRight="@drawable/baseline_phone_24"
             android:drawablePadding="20dp"
             android:hint="Teléfono"
             android:padding="10dp"
@@ -69,12 +69,12 @@
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:drawableLeft="@drawable/baseline_email_24"
+            android:drawableRight="@drawable/baseline_email_24"
             android:drawablePadding="20dp"
             android:hint="Correo electónico"
             android:padding="10dp"
@@ -83,37 +83,44 @@
         <EditText
             android:id="@+id/passwrd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
             android:drawableRight="@drawable/baseline_remove_red_eye_24"
             android:drawablePadding="20dp"
-            android:hint="Contraseña"
+            android:hint="Confirmación de contraseña"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColorHint="@color/gris" />
+            android:textColorHint="@color/gris"
+            android:onClick="togglePasswordVisibility" />
 
         <EditText
             android:id="@+id/repasswrd"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
             android:drawableRight="@drawable/baseline_remove_red_eye_24"
             android:drawablePadding="20dp"
-            android:hint="Confirmación de contraseña "
+            android:hint="Confirmación de contraseña"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColorHint="@color/gris" />
+            android:textColorHint="@color/gris"
+            android:onClick="togglePasswordVisibility" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="322dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/boton"
             android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginTop="160dp"
             android:layout_marginBottom="30dp"

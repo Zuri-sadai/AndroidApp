@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +21,7 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="55dp"
+            android:layout_height="77dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/user" />
 
@@ -48,10 +50,11 @@
             android:background="@color/white"
             android:drawableRight="@drawable/baseline_remove_red_eye_24"
             android:drawablePadding="20dp"
-            android:hint="Contraseña"
+            android:hint="Confirmación de contraseña"
             android:inputType="textPassword"
             android:padding="10dp"
-            android:textColorHint="@color/gris" />
+            android:textColorHint="@color/gris"
+            android:onClick="togglePasswordVisibility" />
 
         <View
             android:layout_width="match_parent"
@@ -80,7 +83,6 @@
             android:focusable="true"
             android:onClick="showRegisterLayout"
             android:layout_marginBottom="10dp" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
